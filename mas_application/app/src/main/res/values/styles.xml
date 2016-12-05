@@ -1,0 +1,40 @@
+<resources>
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#45ACCD</item>
+    </style>
+    <style name="MyTheme_ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:icon">@drawable/ic_la</item>
+    </style>
+    <color name="tab">#FF2222</color>
+    <color name="bora">#5263BD</color>
+    <color name="main">#5FAEDE</color>
+    <color name="emeral">#68D4AB</color>
+    <color name="num">#8EF58D</color>
+    <color name="shape">#F4FA8B</color>
+    <color name="defalutBtn">#666666</color>
+    <color name="selectedBtn">#97b20a</color>
+    <color name="actionbar">#45ACCD</color>
+    <color name="back1">#98CCED</color>
+    <color name="back2">#DCEFFF</color>
+    <color name="btn1">#1356AC</color>
+    <color name="btn2">#012245</color>
+    <color name="twit">#1f8ecd</color>
+    <color name="defaultText">#676768</color>
+    <color name="silverlight">#DCDCDC</color>
+    <color name="red">#ff3232</color>
+    <color name="orange">#ff7f00</color>
+
+    <style name="FullscreenTheme" parent="CustomActionBarTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+ </resources>

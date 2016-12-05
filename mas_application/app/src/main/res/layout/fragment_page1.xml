@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    >
+    <LinearLayout
+        android:id="@+id/best_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/rcmd_question"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:dividerHeight="0dp"
+        android:divider="#00000000"
+        android:background="#DCDCDC"
+        android:layout_below="@+id/best_layout"
+        android:layout_marginBottom="3dp"/>
+</RelativeLayout>
+

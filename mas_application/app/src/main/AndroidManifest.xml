@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.pelkan.tab"
+    android:versionCode="6"
+    android:versionName="1.14">
+
+    <uses-sdk
+        android:maxSdkVersion="23"
+        android:minSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <permission
+        android:name="com.pelkan.tab.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.pelkan.tab.permission.C2D_MESSAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_la"
+        android:label="MAS"
+        android:theme="@style/Theme.Customactionbartheme"
+        tools:node="replace"
+        tools:replace="android:icon,android:theme">
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.pelkan.tab" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GCMIntentService" />
+
+        <activity
+            android:name=".Start"
+            android:label="@string/title_activity_start">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Tab"
+            android:label="  MAS"
+            android:logo="@drawable/ic_la" />
+        <activity
+            android:name=".Register"
+            android:label="@string/title_activity_register" />
+        <activity
+            android:name=".Login"
+            android:label="로그인" />
+        <activity
+            android:name=".AddQuestion"
+            android:label="질문올리기" />
+        <activity
+            android:name=".ImageDetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".SearchActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".UploadActivity"
+            android:label="@string/title_activity_upload" />
+        <activity
+            android:name=".ProfileUploadActivity"
+            android:label="@string/title_activity_upload" />
+        <activity
+            android:name=".ResponseUploadActivity"
+            android:label="@string/title_activity_upload" />
+        <activity
+            android:name=".Response"
+            android:label="답변하기" />
+        <activity
+            android:name=".VideoActivity"
+            android:label="질문올리기" />
+        <activity
+            android:name=".MediaPlayerActivity"
+            android:label="질문올리기" />
+        <activity
+            android:name=".AddExamActivity"
+            android:label="시험출제" />
+        <activity
+            android:name=".SolveExamActivity"
+            android:label="시험보기" />
+        <activity
+            android:name=".ExamResponseUploadActivity"
+            android:label="시험보기" />
+        <activity
+            android:name=".CheckExamActivity"
+            android:label="채점하기" />
+        <activity
+            android:name=".CheckMyScoreActivity"
+            android:label="점수확인" />
+    </application>
+
+</manifest>

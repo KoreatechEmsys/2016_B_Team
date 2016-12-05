@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tab</string>
+    <string name="title_section1">마이페이지</string>
+    <string name="title_section2">문제목록</string>
+    <string name="title_section3">문제등록</string>
+    <string name="title_section4">문제등록</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="big_category">대분류</string>
+    <string name="title_activity_start">Start</string>
+    <string name="title_activity_register">Register</string>
+    <string name="powordURL">http://218.150.182.58:2041/mas/</string>
+    <string name="title_activity_add_question">AddQuestion</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="title_activity_detail__quesion">Detail_Quesion</string>
+    <string name="title_activity_response">Response</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_iot__test">Iot_Test</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="title_activity_image_detail">ImageDetailActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_media_player">MediaPlayerActivity</string>
+
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_activity_add_exam">AddExamActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_solve_exam">SolveExamActivity</string>
+
+</resources>

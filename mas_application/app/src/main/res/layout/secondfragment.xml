@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <TextView
+        android:text="Knowledge Map"
+        android:paddingTop="8dp"
+        android:textSize="16dp"
+        android:paddingLeft="8dp"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="700dp"
+        android:paddingBottom="30dp"
+        android:background="@drawable/textlines_white"
+        android:id="@+id/canvas">
+    </RelativeLayout>
+
+    <TextView
+        android:text="단원별 Level"
+        android:layout_below="@+id/canvas"
+        android:id="@+id/text"
+        android:textSize="16dp"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/chart1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/text"/>
+</LinearLayout>
+        </ScrollView>
+    </RelativeLayout>

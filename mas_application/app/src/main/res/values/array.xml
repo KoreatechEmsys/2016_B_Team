@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="question">
+        <item>난이도 1</item>
+        <item>난이도 2</item>
+        <item>난이도 3</item>
+        <item>난이도 4</item>
+        <item>난이도 5</item>
+        <item>난이도 6</item>
+        <item>난이도 7</item>
+        <item>난이도 8</item>
+        <item>난이도 9</item>
+        <item>난이도 10</item>
+    </string-array>
+    <string-array name="search_config">
+        <item>최신순</item>
+        <item>조회수</item>
+        <item>난이도</item>
+    </string-array>
+</resources>

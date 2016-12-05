@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".Tab$PlaceholderFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:id="@+id/add_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:tint="@color/actionbar"
+                android:src="@drawable/exam_add"
+                android:paddingRight="20dp"
+                android:layout_height="80dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:text="시험출제"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/solve_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:tint="@color/actionbar"
+                android:src="@drawable/exam_solve"
+                android:paddingRight="20dp"
+                android:layout_height="80dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"
+                android:textSize="20dp"
+                android:text="시험보기"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/correct_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:tint="@color/actionbar"
+                android:src="@drawable/ic_done_white_36dp"
+                android:paddingRight="20dp"
+                android:layout_height="80dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"
+                android:textSize="20dp"
+                android:text="채점하기"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:tint="@color/actionbar"
+                android:src="@drawable/exam_score"
+                android:paddingRight="20dp"
+                android:layout_height="80dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:paddingLeft="8dp"
+                android:textSize="20dp"
+                android:text="점수확인"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

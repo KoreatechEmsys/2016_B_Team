@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/menu_name"
+            android:text="메뉴1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="20dp">
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/detailBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fancy:fb_borderColor="@color/btn1"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="@color/btn1"
+                fancy:fb_focusColor="@color/btn2"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                fancy:fb_radius="99dp"
+                fancy:fb_textColor="#FFFFFF"
+                fancy:fb_fontIconResource="&#xf101;" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
