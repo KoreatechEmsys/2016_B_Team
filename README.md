@@ -18,3 +18,5 @@ This project proposes the mobile application that manages user's learning schedu
 
 #
 This is a graduation project at School of Computer Science and Engineering, Koreatech.
+
+<img src="https://github.com/KoreatechEmsys/2016_B_Team/blob/master/Application_image.jpg" width="500">
