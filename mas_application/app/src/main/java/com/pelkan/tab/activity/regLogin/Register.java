@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -44,8 +43,6 @@ public class Register extends Activity {
     private ProgressDialog progressDialog;
     
     private boolean regFlag = false;
-    SharedPreferences setting;
-    SharedPreferences.Editor editor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,9 +59,6 @@ public class Register extends Activity {
 
         progressDialog = new ProgressDialog(this);							//진행바
         progressDialog.setCancelable(false);
-
-        setting = getSharedPreferences("setting", 0);						
-        editor= setting.edit();
 
         //회원가입 버튼 누르면
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -183,18 +177,6 @@ public class Register extends Activity {
 
         RegisterUser ru = new RegisterUser();
         ru.execute(id, password, phoneNum, myName);
-    }
-    //로그인 구현
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     //진행바 
