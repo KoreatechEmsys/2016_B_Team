@@ -158,19 +158,45 @@ public class Register extends Activity {
                 data.put("password",params[1]);
                 data.put("phone",params[2]);
                 data.put("name",params[3]);
+                
+                try{
+                    String regURL = getString(R.string.powordURL);
+                    regURL = regURL + "/regLogin/register.php";
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(logURL);
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
-                String regURL = getString(R.string.powordURL);
-                regURL = regURL + "/regLogin/register.php";
-                String result = ruc.sendPostRequest(regURL,data);
+                    HttpResponse response = httpClient.execute(httpPost);
+                    HttpEntity entity = response.getEntity();
+                    is = entity.getContent();
 
-                if(result.equals("1")) {
-                    result = "이미 존재하는 아이디 입니다.";
-                    regFlag = false;
-                } else{
-                    result = "회원가입에 성공했습니다.";
-                    regFlag = true;
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"), 8);
+                    StringBuilder sb = new StringBuilder();
+                    String line = null;
+                    
+                    while ((line = reader.readLine()) != null)
+                    {
+                        sb.append(line + "\n");
+                    }
+                    
+                    result = sb.toString();
+                    
+                    if(result.equals("1")) {
+                        result = "이미 존재하는 아이디 입니다.";
+                        regFlag = false;
+                    } else{
+                        result = "회원가입에 성공했습니다.";
+                        regFlag = true;
+                    }
+                    
+                } catch (ClientProtocolException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-
+                
                 return  result;
             }
         }
