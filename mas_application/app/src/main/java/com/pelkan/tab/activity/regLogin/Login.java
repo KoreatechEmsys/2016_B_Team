@@ -32,29 +32,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Login extends ActionBarActivity {
-    public static String my_id="";
-    SharedPreferences setting;
-    SharedPreferences.Editor editor;
-    private EditText emailInput;
+    private EditText idInput;
     private EditText passwordInput;
     private Button loginBtn;
+    private CheckBox autoLogin;
     Boolean loginChecked;
+    SharedPreferences setting;
+    SharedPreferences.Editor editor;
+    
     Start aActivity = (Start)Start.startActivisy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final CheckBox autoLogin;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        emailInput = (EditText) findViewById(R.id.emailInput);//姓名输入框
-        passwordInput = (EditText) findViewById(R.id.passwordInput);//邮箱输入框
+        
+        idInput = (EditText) findViewById(R.id.idInput);				//뷰에서 인스턴스 받음
+        passwordInput = (EditText) findViewById(R.id.passwordInput);
         loginBtn = (Button) findViewById(R.id.registerButton);
         autoLogin = (CheckBox) findViewById(R.id.autoLogin);
 
-        setting = getSharedPreferences("setting", 0);
+        setting = getSharedPreferences("setting", 0);					//이전에 저장된 값 읽어오기
         editor= setting.edit();
 
-        if(setting.getBoolean("Auto_Login_enabled", false)){
+        if(setting.getBoolean("Auto_Login_enabled", false)){			//자동로그인 설정 유무 확인
             emailInput.setText(setting.getString("ID", ""));
             passwordInput.setText(setting.getString("PW", ""));
 
@@ -66,7 +67,7 @@ public class Login extends ActionBarActivity {
             public void onClick(View v) {
                 loginChecked = autoLogin.isChecked();
 
-                if(loginChecked == true) {
+                if(loginChecked == true) {								//자동로그인 설정 유무에따라 설정한 값 저장
                     editor.putString("ID", emailInput.getText().toString());
                     editor.putString("PW", passwordInput.getText().toString());
                     editor.putBoolean("Auto_Login_enabled", true);
@@ -86,15 +87,13 @@ public class Login extends ActionBarActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loadingDialog = ProgressDialog.show(Login.this, "Please wait", "Loading...");
+                loadingDialog = ProgressDialog.show(Login.this, "잠시 기다려주세요",null, true, true);
             }
 
             @Override
             protected String doInBackground(String... params) {
                 String uname = username;
                 String pass = password;
-                my_id = username;
-                //System.out.println("이름은 " + uname + " 이거임");
 
                 InputStream is = null;
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -104,25 +103,24 @@ public class Login extends ActionBarActivity {
 
                 try{
                     String logURL = getString(R.string.powordURL);
-                    logURL = logURL + "login.php";
+                    logURL = logURL + "regLogin/login.php";
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(logURL);
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
                     HttpResponse response = httpClient.execute(httpPost);
-
                     HttpEntity entity = response.getEntity();
-
                     is = entity.getContent();
 
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"), 8);
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
                     StringBuilder sb = new StringBuilder();
-
                     String line = null;
+                    
                     while ((line = reader.readLine()) != null)
                     {
-                        sb.append(line + "\n");
+                        sb.append(line);
                     }
+                    
                     result = sb.toString();
                 } catch (ClientProtocolException e) {
                     e.printStackTrace();
@@ -136,7 +134,7 @@ public class Login extends ActionBarActivity {
 
             @Override
             protected void onPostExecute(String result){
-                String s = result.trim();
+                String s = result;
                 loadingDialog.dismiss();
 
                 if(s.equalsIgnoreCase("success")){
@@ -147,7 +145,7 @@ public class Login extends ActionBarActivity {
 
                     Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(getApplicationContext(), "Invalid User Name or Password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "유효하지 않은 사용자 정보입니다", Toast.LENGTH_LONG).show();
                 }
             }
         }
