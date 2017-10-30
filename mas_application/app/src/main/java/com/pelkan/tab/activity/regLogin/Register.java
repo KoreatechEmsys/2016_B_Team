@@ -33,7 +33,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Register extends Activity {
-    private static final String TAG = Register.class.getSimpleName();
     private Button registerButton;                              //ui 컴포넌트
     private EditText idInput;
     private EditText passwordInput;
