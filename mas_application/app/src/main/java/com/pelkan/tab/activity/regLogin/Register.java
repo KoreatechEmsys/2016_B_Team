@@ -131,7 +131,6 @@ public class Register extends Activity {
     private void register(String id, String password, String phoneNum, String myName) {
         class RegisterUser extends AsyncTask<String, Void, String>{
             ProgressDialog loading;
-            RegisterUserClass ruc = new RegisterUserClass();
 
             @Override
             protected void onPreExecute() {
